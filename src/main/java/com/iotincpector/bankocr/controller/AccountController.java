@@ -14,15 +14,27 @@ import java.util.List;
 public class AccountController {
 
     private final String PATH1 = "src/main/java/com/iotincpector/bankocr/resource/accountText_us1.txt";
+    private final String PATH3 = "src/main/java/com/iotincpector/bankocr/resource/accountText_us3.txt";
 
     @Autowired
     ReadFromTxtFile readFromTxtFile;
 
-    //method to get the accounts as an array of strings
+    //method to get the valid accounts as an array of strings for user story 1 and 2
     @GetMapping("/user-story1")
-    public List<String> getDogList(){
+    public List<String> getAccounts(){
         try {
             return readFromTxtFile.read(PATH1);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //method to get the valid and invalid accounts as an array of strings for user story 3 and 4
+    @GetMapping("/user-story3")
+    public List<String> getAccountsWithIllAccounts(){
+        try {
+            return readFromTxtFile.read(PATH3);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
