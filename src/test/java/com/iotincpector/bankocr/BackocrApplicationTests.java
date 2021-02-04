@@ -1,4 +1,4 @@
-package com.iotincpector.backocr;
+package com.iotincpector.bankocr;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
