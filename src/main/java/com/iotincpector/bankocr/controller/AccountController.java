@@ -30,9 +30,20 @@ public class AccountController {
         return null;
     }
 
-    //method to get the valid and invalid accounts as an array of strings for user story 3 and 4
+    //method to get the valid and invalid accounts as an array of strings for user story 3
     @GetMapping("/user-story3")
     public List<String> getAccountsWithIllAccounts(){
+        try {
+            return readFromTxtFile.read(PATH3);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //method to get the valid and invalid accounts as an array of strings for user story  4
+    @GetMapping("/user-story4")
+    public List<String> getAccountsUS4(){
         try {
             return readFromTxtFile.read(PATH3);
         } catch (FileNotFoundException e) {
