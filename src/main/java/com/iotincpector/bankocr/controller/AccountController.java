@@ -15,6 +15,7 @@ public class AccountController {
 
     private final String PATH1 = "src/main/java/com/iotincpector/bankocr/resource/accountText_us1.txt";
     private final String PATH3 = "src/main/java/com/iotincpector/bankocr/resource/accountText_us3.txt";
+    private final String PATH4 = "src/main/java/com/iotincpector/bankocr/resource/accountText_us4.txt";
 
     @Autowired
     ReadFromTxtFile readFromTxtFile;
@@ -45,7 +46,7 @@ public class AccountController {
     @GetMapping("/user-story4")
     public List<String> getAccountsUS4(){
         try {
-            return readFromTxtFile.read(PATH3);
+            return readFromTxtFile.read(PATH4);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
